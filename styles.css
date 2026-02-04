@@ -1,0 +1,116 @@
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffe6ee, #ffd1dc);
+    font-family: "Nunito", sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    z-index: 5;
+}
+
+h1 {
+    color: #c9184a;
+    font-size: 2.6em;
+}
+
+.buttons {
+    margin-top: 20px;
+    position: relative;
+}
+
+.gif_container img {
+    width: 280px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* YES button pulse & glow (size constant) */
+.yes-button {
+    background: linear-gradient(45deg, #ff4d6d, #ff758f);
+    color: white;
+    border: none;
+    font-size: 1.4em;
+    padding: 12px 26px;
+    border-radius: 30px;
+    cursor: pointer;
+    animation: yesPulse 1.6s infinite;
+}
+
+@keyframes yesPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255,77,109,0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255,77,109,0.9);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255,77,109,0.4);
+        transform: scale(1);
+    }
+}
+
+/* NO button floating */
+.no-button {
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    position: absolute;
+    transition: top 0.3s ease, left 0.3s ease;
+}
+
+/* Hearts */
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    width: 22px;
+    height: 22px;
+    background: #ff4d6d;
+    transform: rotate(45deg);
+    filter: drop-shadow(0 0 12px #ff758f);
+    animation: rise linear forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #ff4d6d;
+    border-radius: 50%;
+}
+
+.heart::before { top: -11px; left: 0; }
+.heart::after { left: -11px; top: 0; }
+
+@keyframes rise {
+    to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* Fireworks canvas */
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
