@@ -1,4 +1,4 @@
-  body {
+ body {
     margin: 0;
     height: 100vh;
     background: radial-gradient(circle at top, #ffe6ee, #ffd1dc);
@@ -15,8 +15,8 @@
 }
 
 h1 {
-    color: #c9184a;
     font-size: 3em;
+    color: #c9184a;
 }
 
 .gif_container img {
